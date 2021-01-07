@@ -1,2 +1,2 @@
 # Credit-Suisse-Global-Coding-Challenge-2020-Solutions
-My solutions to Credit Suisse Global Coding Challenge 2020( University Rank:#1 National Rank:#374 and Global Rank:#446 amongst 15,000 participants).
+My solutions to Credit Suisse Global Coding Challenge 2020<br\>( University Rank:#1 National Rank:#374 and Global Rank:#446 amongst 15,000 participants).
