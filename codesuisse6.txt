@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int size1(int low,int high,int n)
+{
+	    if(low*high>=n)
+    {
+    	return low;
+    }
+    else if(low<high)
+    	{
+    	low++;
+    	size1(low,high,n);
+    	}
+}
+string encrypt(string words) {
+    // Participant's code will go here
+    int n=words.size();
+    string s;
+    for(int i=0;i<n;++i)
+    {
+    	if(words[i]==' ')
+        continue;
+        s+=words[i];
+    }
+    int m=s.size();
+    int low=floor(sqrt(m));
+    int high=ceil(sqrt(m));
+    
+    low=size1(low,high,m);
+    
+    int diff=high-low;
+    
+    int low1=0;
+    int high1=high;
+    string s1;
+    int j;
+    
+    for(int i=0;i<high;++i)
+    {
+    	s1+=s[i];
+    	j=i;
+    	while(j+high<n)
+    	{
+    		s1+=s[j+high];
+    		j=j+high;
+    	}
+    	if(i!=high-2)
+    	s1+=" ";
+    }
+    return s1;
+}
+
+
+int main() {
+    string words;
+    getline(cin, words);
+
+    string result = encrypt(words);
+
+    // Do not remove below line
+    cout << result << "\n";
+    // Do not print anything after this line
+
+    return 0;
+}

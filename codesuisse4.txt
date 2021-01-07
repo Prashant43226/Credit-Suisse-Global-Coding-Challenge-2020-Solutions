@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+using namespace std;
+double maximumExpectedMoney(long long n, long long m, long double p[], double x[], long double y[],long double negp[])
+{
+    //Complete the maximumExpectedMoney function.
+    long double px[n];
+    long double negpy[n];
+    long double sum[n];
+    long double result;
+ if(m>n)
+return 0;
+else{   
+for(int i=0;i<n;++i)
+    {
+    	px[i]=p[i]*x[i];
+    	negpy[i]=negp[i]*y[i];
+    }
+    for(int i=0;i<n;++i)
+    {
+    	sum[i]=px[i]-negpy[i];
+    }
+    sort(sum,sum+n);
+    for(int i=n-1;i>=0;--i)
+    {
+    	if(sum[i]>0&&k>0)
+    	{
+    		result+=sum[i];
+    	}
+    	k--;
+    }
+    return result;
+}
+}
+
+
+int main(){
+    long long n, m;
+
+    cin >> n >> m;
+    long double p[n], x[n], y[n],negp[n];
+
+    for(int i = 0; i < n; i++)
+        cin >> p[i];
+    for(int i = 0; i < n; i++)
+        cin >> x[i];
+    for(int i = 0; i < n; i++)
+        cin >> y[i];
+    for(int i=0;i<n;++i)
+    negp[i]=1-p[i];
+
+   long  double result=maximumExpectedMoney(n,m,p,x,y,negp);
+
+    // Do not remove below line
+    cout << result << endl;
+    // Do not print anything after this line
+
+    return 0;
+}
